@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Playful Heart Games Hub</title>
+  <title>Playful Heart Parenting App Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Brand fonts -->
@@ -108,7 +108,7 @@
     .game-card {
       background: #f7fcff;
       border-radius: 18px;
-      padding: 14px 12px 12px;
+      padding: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -127,15 +127,15 @@
     }
 
     .game-card img {
-      width: 64px;
-      height: 64px;
+      width: 100%;
+      max-width: 180px;
       border-radius: 18px;
-      object-fit: contain;
+      display: block;
     }
 
     .game-name {
       font-weight: 600;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       text-align: center;
     }
 
@@ -177,8 +177,8 @@
       <div class="brand">
         <div class="brand-logo">PH</div>
         <div class="brand-text">
-          <h1>Playful Heart Games</h1>
-          <p>All your silly connection games in one place</p>
+          <h1>Playful Heart Parenting App Hub</h1>
+          <p>All games and Little Moments in one place</p>
         </div>
       </div>
       <div class="tag">Bundle Hub</div>
@@ -187,41 +187,61 @@
     <main>
       <div class="games-grid">
 
-        <!-- Example game tiles - update paths and icon src values to match your apps -->
-
-        <a class="game-card" href="/WYR/index.html">
-          <img src="/WYR/icons/icon-192.png" alt="Would You Rather icon">
-          <div class="game-name">Would You Rather</div>
-          <div class="game-tagline">Quick either or prompts</div>
+        <!-- 1. Are We There Yet (car games) -->
+        <a class="game-card" href="https://miawizz.github.io/awty-car-games/">
+          <img src="/php-app-hub/icons/are-we-there-yet.png" alt="Are We There Yet car games logo">
+          <div class="game-name">Are We There Yet</div>
+          <div class="game-tagline">Car games for connection</div>
         </a>
 
-        <a class="game-card" href="/you-are/index.html">
-          <img src="/you-are/icons/icon-192.png" alt="You Are icon">
-          <div class="game-name">You Are</div>
-          <div class="game-tagline">Affirmations with a giggle</div>
+        <!-- 2. Plot Twist -->
+        <a class="game-card" href="https://miawizz.github.io/plot-twist/">
+          <img src="/php-app-hub/icons/plot-twist.png" alt="Plot Twist story game logo">
+          <div class="game-name">Plot Twist</div>
+          <div class="game-tagline">Story prompts with surprise twists</div>
         </a>
 
-        <a class="game-card" href="/who-can-sound-like/index.html">
-          <img src="/who-can-sound-like/icons/icon-192.png" alt="Who Can Sound Like icon">
+        <!-- 3. Who Can Sound Like -->
+        <a class="game-card" href="https://miawizz.github.io/who-can-sound-like/">
+          <img src="/php-app-hub/icons/who-can-sound-like.png" alt="Who Can Sound Like logo">
           <div class="game-name">Who Can Sound Like</div>
           <div class="game-tagline">Silly sound challenges</div>
         </a>
 
-        <a class="game-card" href="/plot-twist/index.html">
-          <img src="/plot-twist/icons/icon-192.png" alt="Plot Twist icon">
-          <div class="game-name">Plot Twist</div>
-          <div class="game-tagline">Story prompts with a twist</div>
+        <!-- 4. Would You Rather -->
+        <a class="game-card" href="https://miawizz.github.io/WYR/">
+          <img src="/php-app-hub/icons/would-you-rather.png" alt="Would You Rather logo">
+          <div class="game-name">Would You Rather</div>
+          <div class="game-tagline">Quick either or prompts</div>
         </a>
 
-        <!-- Add more cards for each app in your bundle -->
+        <!-- 5. You Are -->
+        <a class="game-card" href="https://miawizz.github.io/you-are/">
+          <img src="/php-app-hub/icons/you-are.png" alt="You Are prompts logo">
+          <div class="game-name">You Are</div>
+          <div class="game-tagline">Playful affirmations</div>
+        </a>
 
-        <!-- Example placeholder tile for another game 
-        <a class="game-card" href="/make-this-face/index.html">
-          <img src="/make-this-face/icons/icon-192.png" alt="Make This Face icon">
+        <!-- 6. Act Out That Sound -->
+        <a class="game-card" href="https://miawizz.github.io/act-out-that-sound/">
+          <img src="/php-app-hub/icons/act-out-that-sound.png" alt="Act Out That Sound logo">
+          <div class="game-name">Act Out That Sound</div>
+          <div class="game-tagline">Move and giggle with sound prompts</div>
+        </a>
+
+        <!-- 7. Make This Face -->
+        <a class="game-card" href="https://miawizz.github.io/make-this-face/">
+          <img src="/php-app-hub/icons/make-this-face.png" alt="Make This Face logo">
           <div class="game-name">Make This Face</div>
-          <div class="game-tagline">Expressive faces and giggles</div>
+          <div class="game-tagline">Facial expression challenges</div>
         </a>
-        -->
+
+        <!-- 8. Little Moments for Big Laughs app -->
+        <a class="game-card" href="https://miawizz.github.io/little-moments/">
+          <img src="/php-app-hub/icons/little-moments-for-big-laughs.png" alt="Little Moments for Big Laughs logo">
+          <div class="game-name">Little Moments for Big Laughs</div>
+          <div class="game-tagline">Tiny prompts for everyday joy</div>
+        </a>
 
       </div>
     </main>
