@@ -32,28 +32,29 @@
       padding: 0;
     }
 
-    body {
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f3fafc;
-      color: #14323c;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 24px;
-    }
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #fff9f3;  /* was #f3fafc */
+  color: #14323c;
+  min-height: 100vh;
+  padding: 24px;
+}
 
-    .app-shell {
-      width: 100%;
-      max-width: 960px;
-      background: #ffffff;
-      border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      padding: 24px 20px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+
+.app-shell {
+  width: 100%;
+  max-width: 960px;
+  background: #fff9f3;   /* cream */
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 24px 20px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0 auto;
+}
+
+
 
     header {
       display: flex;
@@ -68,17 +69,18 @@
       align-items: center;
       gap: 12px;
     }
+    
+.brand-logo {
+  width: 72px;          /* bigger logo */
+  height: 72px;
+  border-radius: 18px;
+  background: transparent;   /* no colored tile behind the logo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
-    .brand-logo {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: #699eb0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
 
     .brand-logo img {
       width: 100%;
@@ -118,26 +120,27 @@
       margin-top: 4px;
     }
 
-    .game-card {
-      background: #f7fcff;
-      border-radius: 18px;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 0 0 0 1px rgba(20, 50, 60, 0.06);
-      transition: transform 120ms ease-out, box-shadow 120ms ease-out, background 120ms ease-out;
-    }
+.game-card {
+  background: #127490;   /* dark teal from your brand */
+  border-radius: 18px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #ffffff;        /* white text on teal */
+  box-shadow: 0 0 0 1px rgba(20, 50, 60, 0.12);
+  transition: transform 120ms ease-out, box-shadow 120ms ease-out, background 120ms ease-out;
+}
 
-    .game-card:hover,
-    .game-card:active {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-      background: #ffffff;
-    }
+.game-card:hover,
+.game-card:active {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  background: #1690b4;   /* slightly lighter teal on hover */
+}
+
 
     .game-card img {
       width: 100%;
@@ -146,18 +149,20 @@
       display: block;
     }
 
-    .game-name {
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-align: center;
-    }
+.game-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #ffffff;
+}
 
-    .game-tagline {
-      font-size: 0.72rem;
-      text-align: center;
-      opacity: 0.7;
-      min-height: 2.4em;
-    }
+.game-tagline {
+  font-size: 0.72rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  min-height: 2.4em;
+}
+
 
     .footer-note {
       font-size: 0.68rem;
@@ -249,12 +254,7 @@
     }
 
     /* Install help bar */
-    .install-help {
-      position: sticky;
-      top: 0;
-      z-index: 10001;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    }
+
 
     .install-help__wrap {
       background: #fff7f4;
@@ -374,6 +374,15 @@
       display: none;
     }
 
+    .install-help {
+  position: sticky;
+  top: 0;
+  z-index: 10001;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  width: 100%;
+}
+
+
     @media (prefers-reduced-motion: reduce) {
       .install-help__summary .caret {
         transition: none;
@@ -468,10 +477,10 @@
         </div>
         <div class="brand-text">
           <h1>Playful Heart Parenting App Hub</h1>
-          <p>All games and Little Moments in one place</p>
+          <p>All games and little moment ideas in one place</p>
         </div>
       </div>
-      <div class="tag">Bundle Hub</div>
+
     </header>
 
     <main>
