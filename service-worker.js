@@ -1,6 +1,6 @@
 // service-worker.js
 
-const CACHE_NAME = "php-app-hub-v1";
+const CACHE_NAME = "php-app-hub-v2";
 
 const ASSETS = [
   // Hub shell
