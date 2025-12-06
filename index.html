@@ -13,8 +13,17 @@
   <!-- PWA manifest -->
   <link rel="manifest" href="manifest.json">
 
-  <!-- Theme color for address bar and app shell -->
+  <!-- Theme and favicon -->
   <meta name="theme-color" content="#699eb0">
+  <link rel="icon" type="image/png" href="/php-app-hub/icons/php-logo-192.png">
+
+  <!-- Social sharing -->
+  <meta property="og:title" content="Playful Heart Parenting App Hub">
+  <meta property="og:description" content="All your Playful Heart Parenting games and Little Moments in one place">
+  <meta property="og:image" content="https://miawizz.github.io/php-app-hub/icons/php-logo-512.png">
+  <meta property="og:url" content="https://miawizz.github.io/php-app-hub/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://miawizz.github.io/php-app-hub/icons/php-logo-512.png">
 
   <style>
     * {
@@ -68,10 +77,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: "Baloo 2", system-ui, sans-serif;
-      font-weight: 600;
-      font-size: 22px;
-      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .brand-text h1 {
@@ -169,13 +182,290 @@
         font-size: 0.72rem;
       }
     }
+
+    /* Courtesy overlay for PHP App Hub */
+    #courtesyOverlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      display: none;
+      place-items: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.28s ease;
+    }
+
+    .courtesy-card {
+      width: min(560px, 92%);
+      background: #ffffff;
+      color: #18323b;
+      border-radius: 18px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+      padding: 22px 22px 20px;
+      text-align: left;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .courtesy-card h2 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+      color: #127490;
+    }
+
+    .courtesy-card p {
+      margin: 4px 0 12px;
+      font-size: 0.95rem;
+    }
+
+    .courtesy-check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 4px 0 14px;
+      font-size: 0.9rem;
+    }
+
+    #courtesyAck {
+      width: 18px;
+      height: 18px;
+    }
+
+    #courtesyContinue {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 0;
+      font-weight: 700;
+      font-size: 0.98rem;
+      cursor: pointer;
+      background: #b24627;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    #courtesyContinue:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    /* Install help bar */
+    .install-help {
+      position: sticky;
+      top: 0;
+      z-index: 10001;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .install-help__wrap {
+      background: #fff7f4;
+      border-bottom: 1px solid #f2e7e3;
+    }
+
+    .install-help__summary {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0.85rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .install-help__summary:hover {
+      background: #fff3ee;
+    }
+
+    summary.install-help__wrap::-webkit-details-marker {
+      display: none;
+    }
+
+    summary.install-help__wrap::marker {
+      content: "";
+      font-size: 0;
+    }
+
+    .install-help__summary .caret {
+      transition: transform 0.2s ease;
+      width: var(--caret-size, 40px);
+      height: var(--caret-size, 40px);
+    }
+
+    details[open] .install-help__summary .caret {
+      transform: rotate(180deg);
+    }
+
+    details[open] .install-help__wrap {
+      box-shadow: inset 0 -1px 0 #e7d8d3, 0 1px 0 #e7d8d3;
+    }
+
+    .install-help__panel {
+      padding: 0.75rem 0.9rem 0.95rem 0.9rem;
+      display: grid;
+      gap: 0.75rem;
+      background: #fff;
+    }
+
+    .install-help__panel h4 {
+      margin: 0.25rem 0 0.25rem 0;
+      font-size: 0.95rem;
+    }
+
+    .install-help__panel p {
+      margin: 0 0 0.35rem 0;
+      font-size: 0.9rem;
+    }
+
+    .install-help__close {
+      all: unset;
+      display: inline-grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      color: #000;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .install-help__close:focus-visible {
+      outline: 2px solid #000;
+      outline-offset: 2px;
+    }
+
+    .install-help__tips {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    .install-help__box {
+      border: 1px solid #efdfda;
+      background: #fff;
+      border-radius: 0.65rem;
+      padding: 0.65rem 0.75rem;
+    }
+
+    .install-help__steps {
+      margin: 0.25rem 0 0 1.15rem;
+    }
+
+    .install-help__steps li {
+      margin: 0.25rem 0;
+    }
+
+    .install-help__never {
+      align-self: start;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      font: inherit;
+      color: #6b7f88;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .install-help__never:hover {
+      color: #46565f;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .install-help.gate-hide {
+      display: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .install-help__summary .caret {
+        transition: none;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- One time courtesy overlay for PHP App Hub -->
+  <section id="courtesyOverlay" role="dialog" aria-labelledby="courtesyTitle" aria-modal="true">
+    <div class="courtesy-card">
+      <h2 id="courtesyTitle">Thanks for supporting this work</h2>
+      <p>
+        This hub is for personal use only by families who have purchased access through Playful Heart Parenting.
+        Please keep this link private and do not share it publicly.
+      </p>
+      <label class="courtesy-check">
+        <input type="checkbox" id="courtesyAck">
+        <span>I understand and I will keep this link private</span>
+      </label>
+      <button id="courtesyContinue" disabled>Continue to the app hub</button>
+    </div>
+  </section>
+
+  <!-- Install help bar -->
+  <details class="install-help gate-hide" id="install-help" data-dismiss-key="ph-install-help-hub">
+    <summary class="install-help__wrap">
+      <div class="install-help__summary" role="button" aria-expanded="false">
+        <svg class="caret" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 10l5 5 5-5z"></path>
+        </svg>
+        <strong>Tap here for a reminder of how to save this app to your home screen</strong>
+        <button class="install-help__close" type="button" title="Hide">✖</button>
+      </div>
+    </summary>
+    <div class="install-help__panel" id="install-help-panel" aria-live="polite">
+      <div class="install-help__box" id="ios-safari" hidden>
+        <h4>iPhone or iPad using Safari</h4>
+        <ol class="install-help__steps">
+          <li>Tap the Share icon at the bottom of Safari</li>
+          <li>Choose Add to Home Screen</li>
+          <li>Tap Add</li>
+        </ol>
+      </div>
+
+      <div class="install-help__box" id="ios-chrome" hidden>
+        <h4>iPhone or iPad using Chrome</h4>
+        <ol class="install-help__steps">
+          <li>Tap the Share icon in the top right</li>
+          <li>Scroll and choose Add to Home Screen</li>
+          <li>Tap Add</li>
+        </ol>
+        <p class="install-help__tips">If you do not see this option, open the app in Safari and use the same steps</p>
+      </div>
+
+      <div class="install-help__box" id="android-chrome" hidden>
+        <h4>Android using Chrome</h4>
+        <ol class="install-help__steps">
+          <li>Tap the three dot menu in the top right</li>
+          <li>Choose Install app or Add to Home screen</li>
+          <li>Confirm Install</li>
+        </ol>
+        <p class="install-help__tips">You may also see an Install button in the address bar</p>
+      </div>
+
+      <div class="install-help__box" id="android-samsung" hidden>
+        <h4>Android using Samsung Internet</h4>
+        <ol class="install-help__steps">
+          <li>Tap the menu button</li>
+          <li>Select Add page to then Home screen</li>
+          <li>Confirm</li>
+        </ol>
+      </div>
+
+      <div class="install-help__box" id="other-browsers" hidden>
+        <h4>Other browsers</h4>
+        <p>Look in the browser menu for Install or Add to Home Screen</p>
+      </div>
+
+      <p class="install-help__tips">Installing adds an icon to your home screen and makes it function like an app</p>
+
+      <button type="button" id="install-help-never" class="install-help__never">Do not show this again</button>
+    </div>
+  </details>
+
   <div class="app-shell">
     <header>
       <div class="brand">
-        <div class="brand-logo">PH</div>
+        <div class="brand-logo">
+          <img src="/php-app-hub/icons/php-logo-192.png" alt="Playful Heart Parenting logo">
+        </div>
         <div class="brand-text">
           <h1>Playful Heart Parenting App Hub</h1>
           <p>All games and Little Moments in one place</p>
@@ -237,11 +527,11 @@
         </a>
 
         <!-- 8. Little Moments for Big Laughs app -->
-   <a class="game-card" href="https://miawizz.github.io/LMFBL/">
-  <img src="/php-app-hub/icons/little-moments-for-big-laughs.png" alt="Little Moments for Big Laughs logo">
-  <div class="game-name">Little Moments for Big Laughs</div>
-  <div class="game-tagline">Tiny prompts for everyday joy</div>
-</a>
+        <a class="game-card" href="https://miawizz.github.io/LMFBL/">
+          <img src="/php-app-hub/icons/little-moments-for-big-laughs.png" alt="Little Moments for Big Laughs logo">
+          <div class="game-name">Little Moments for Big Laughs</div>
+          <div class="game-tagline">Tiny prompts for everyday joy</div>
+        </a>
 
       </div>
     </main>
@@ -251,8 +541,127 @@
     </p>
   </div>
 
+  <!-- Courtesy logic -->
   <script>
-    // Register the root service worker so the hub and all games share one PWA shell
+    (function () {
+      const COURTESY_KEY = "php_hub_courtesy_v1";
+      const overlay = document.getElementById("courtesyOverlay");
+      const ack = document.getElementById("courtesyAck");
+      const btn = document.getElementById("courtesyContinue");
+      const bar = document.getElementById("install-help");
+
+      if (!overlay || !ack || !btn) return;
+
+      if (localStorage.getItem(COURTESY_KEY) === "yes") {
+        if (bar && !localStorage.getItem(bar.getAttribute("data-dismiss-key"))) {
+          bar.classList.remove("gate-hide");
+        }
+        return;
+      }
+
+      overlay.style.display = "grid";
+      if (bar) {
+        bar.classList.add("gate-hide");
+      }
+
+      ack.addEventListener("change", function () {
+        btn.disabled = !ack.checked;
+      });
+
+      btn.addEventListener("click", function () {
+        localStorage.setItem(COURTESY_KEY, "yes");
+        overlay.style.opacity = "0";
+        setTimeout(function () {
+          overlay.style.display = "none";
+          overlay.style.opacity = "1";
+          if (bar && !localStorage.getItem(bar.getAttribute("data-dismiss-key"))) {
+            bar.classList.remove("gate-hide");
+          }
+        }, 300);
+      });
+    })();
+  </script>
+
+  <!-- Install help logic -->
+  <script>
+    (function () {
+      const root = document.getElementById("install-help");
+      if (!root) return;
+
+      const panel = document.getElementById("install-help-panel");
+      const closeBtn = root.querySelector(".install-help__close");
+
+      const providedKey = root.getAttribute("data-dismiss-key");
+      const key = (providedKey && providedKey.trim().length) ? providedKey : "ph-install-help::" + location.pathname;
+
+      try {
+        if (new URLSearchParams(location.search).get("reset_install_tip") === "1") {
+          localStorage.removeItem(key);
+        }
+      } catch (e) {}
+
+      if (localStorage.getItem(key) === "1") {
+        root.classList.add("hidden");
+        return;
+      }
+
+      closeBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        localStorage.setItem(key, "1");
+        root.classList.add("hidden");
+      });
+
+      const neverBtn = document.getElementById("install-help-never");
+      if (neverBtn) {
+        neverBtn.addEventListener("click", function () {
+          localStorage.setItem(key, "1");
+          root.classList.add("hidden");
+        });
+      }
+
+      const ua = navigator.userAgent || "";
+      const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      const isAndroid = /Android/i.test(ua);
+      const isSamsung = /SamsungBrowser/i.test(ua);
+      const isCriOS = /CriOS/i.test(ua);
+      const isFxiOS = /FxiOS/i.test(ua);
+      const isSafari = isIOS && /Safari/i.test(ua) && !isCriOS && !isFxiOS;
+      const isChromeAndroid = isAndroid && /Chrome/i.test(ua) && !isSamsung;
+
+      function show(id) {
+        var el = document.getElementById(id);
+        if (el) el.hidden = false;
+      }
+
+      if (isIOS && isSafari) {
+        show("ios-safari");
+      } else if (isIOS && isCriOS) {
+        show("ios-chrome");
+      } else if (isAndroid && isSamsung) {
+        show("android-samsung");
+      } else if (isChromeAndroid) {
+        show("android-chrome");
+      } else {
+        show("other-browsers");
+      }
+
+      const summary = root.querySelector("summary");
+      const label = root.querySelector(".install-help__summary strong");
+      const closedText = "Tap here for a reminder of how to save this app to your home screen";
+      const openText = "Hide instructions";
+
+      root.addEventListener("toggle", function () {
+        const exp = root.open ? "true" : "false";
+        const btn = root.querySelector(".install-help__summary");
+        if (btn) btn.setAttribute("aria-expanded", exp);
+        if (label) label.textContent = root.open ? openText : closedText;
+      });
+    })();
+  </script>
+
+  <!-- Service worker registration -->
+  <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
         navigator.serviceWorker.register("/service-worker.js").catch(function (error) {
