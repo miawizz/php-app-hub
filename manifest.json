@@ -1,7 +1,6 @@
 {
   "name": "Playful Heart Parenting App Hub",
   "short_name": "PHP App Hub",
-  "description": "All Playful Heart Parenting app games and Little Moments in one place.",
   "start_url": "/php-app-hub/",
   "scope": "/",
   "display": "standalone",
