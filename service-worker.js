@@ -28,7 +28,7 @@ const ASSETS = [
   "/you-are/",
   "/act-out-that-sound/",
   "/make-this-face/",
-  "/little-moments/"
+  "/LMFBL/"
 ];
 
 self.addEventListener("install", event => {
