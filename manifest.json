@@ -1,20 +1,20 @@
 {
-  "name": "Playful Heart Parenting Apps",
-  "short_name": "PHP Apps Hub",
-  "description": "All your Playful Heart Parenting connection games and little moments in one place.",
-  "start_url": "/play-hub/",
+  "name": "Playful Heart Parenting App Hub",
+  "short_name": "PHP App Hub",
+  "description": "All Playful Heart Parenting app games and Little Moments in one place.",
+  "start_url": "/php-app-hub/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#f3fafc",
   "theme_color": "#699eb0",
   "icons": [
     {
-      "src": "/play-hub/icons/play-hub-192.png",
+      "src": "/php-app-hub/icons/play-hub-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/play-hub/icons/play-hub-512.png",
+      "src": "/php-app-hub/icons/play-hub-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
