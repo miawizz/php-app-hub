@@ -32,29 +32,26 @@
       padding: 0;
     }
 
-body {
-  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #fff9f3;  /* was #f3fafc */
-  color: #14323c;
-  min-height: 100vh;
-  padding: 24px;
-}
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff9f3;
+      color: #14323c;
+      min-height: 100vh;
+      padding: 24px;
+    }
 
-
-.app-shell {
-  width: 100%;
-  max-width: 960px;
-  background: #fff9f3;   /* cream */
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  padding: 24px 20px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin: 0 auto;
-}
-
-
+    .app-shell {
+      width: 100%;
+      max-width: 960px;
+      background: #fff9f3;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 24px 20px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 0 auto;
+    }
 
     header {
       display: flex;
@@ -69,18 +66,17 @@ body {
       align-items: center;
       gap: 12px;
     }
-    
-.brand-logo {
-  width: 72px;          /* bigger logo */
-  height: 72px;
-  border-radius: 18px;
-  background: transparent;   /* no colored tile behind the logo */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
 
+    .brand-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
 
     .brand-logo img {
       width: 100%;
@@ -120,27 +116,26 @@ body {
       margin-top: 4px;
     }
 
-.game-card {
-  background: #127490;   /* dark teal from your brand */
-  border-radius: 18px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: #ffffff;        /* white text on teal */
-  box-shadow: 0 0 0 1px rgba(20, 50, 60, 0.12);
-  transition: transform 120ms ease-out, box-shadow 120ms ease-out, background 120ms ease-out;
-}
+    .game-card {
+      background: #127490;
+      border-radius: 18px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #ffffff;
+      box-shadow: 0 0 0 1px rgba(20, 50, 60, 0.12);
+      transition: transform 120ms ease-out, box-shadow 120ms ease-out, background 120ms ease-out;
+    }
 
-.game-card:hover,
-.game-card:active {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-  background: #1690b4;   /* slightly lighter teal on hover */
-}
-
+    .game-card:hover,
+    .game-card:active {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+      background: #1690b4;
+    }
 
     .game-card img {
       width: 100%;
@@ -149,20 +144,19 @@ body {
       display: block;
     }
 
-.game-name {
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-align: center;
-  color: #ffffff;
-}
+    .game-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #ffffff;
+    }
 
-.game-tagline {
-  font-size: 0.72rem;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.8);
-  min-height: 2.4em;
-}
-
+    .game-tagline {
+      font-size: 0.72rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+      min-height: 2.4em;
+    }
 
     .footer-note {
       font-size: 0.68rem;
@@ -254,8 +248,6 @@ body {
     }
 
     /* Install help bar */
-
-
     .install-help__wrap {
       background: #fff7f4;
       border-bottom: 1px solid #f2e7e3;
@@ -375,64 +367,86 @@ body {
     }
 
     .install-help {
-  position: sticky;
-  top: 0;
-  z-index: 10001;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  width: 100%;
-}
-
+      position: sticky;
+      top: 0;
+      z-index: 10001;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      width: 100%;
+    }
 
     @media (prefers-reduced-motion: reduce) {
       .install-help__summary .caret {
         transition: none;
       }
     }
-.printableSection {
-  background: #fff;
-  padding: 24px;
-  border-radius: 16px;
-  margin-top: 40px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
 
-.printTitle {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-}
+    /* Printable section */
+    .printableSection {
+      background: #fff;
+      padding: 24px;
+      border-radius: 16px;
+      margin-top: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
 
-.printDesc {
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
+    .printableSection summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.printIdeasTitle {
-  margin-top: 20px;
-  font-weight: 600;
-}
+    .printableSection summary::-webkit-details-marker {
+      display: none;
+    }
 
-.printIdeas {
-  padding-left: 20px;
-  margin-bottom: 20px;
-  line-height: 1.5;
-}
+    .printCaret {
+      font-size: 1.1rem;
+      opacity: 0.7;
+    }
 
-.printBtn {
-  display: inline-block;
-  background: #699eb0;
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600;
-  text-align: center;
-}
+    .printContent {
+      margin-top: 14px;
+    }
 
-.printBtn:hover {
-  background: #5b8b9a;
-}
+    .printTitle {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
 
-    
+    .printDesc {
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .printIdeasTitle {
+      margin-top: 20px;
+      font-weight: 600;
+    }
+
+    .printIdeas {
+      padding-left: 20px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .printBtn {
+      display: inline-block;
+      background: #699eb0;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .printBtn:hover {
+      background: #5b8b9a;
+    }
   </style>
 </head>
 <body>
@@ -488,7 +502,7 @@ body {
         <h4>Android using Chrome</h4>
         <ol class="install-help__steps">
           <li>Tap the three dot menu in the top right</li>
-          <li>Choose Install app or Add to Home screen</li>
+          <li>Choose Install app or Add to Home Screen</li>
           <li>Confirm Install</li>
         </ol>
         <p class="install-help__tips">You may also see an Install button in the address bar</p>
@@ -525,117 +539,120 @@ body {
           <p>All games and little moment ideas in one place</p>
         </div>
       </div>
-
     </header>
 
     <main>
       <div class="games-grid">
 
-                <!-- 1. Little Moments for Big Laughs app -->
+        <!-- 1. Little Moments for Big Laughs app -->
         <a class="game-card" href="https://miawizz.github.io/LMFBL/">
           <img src="/php-app-hub/icons/little-moments-for-big-laughs.png" alt="Little Moments for Big Laughs logo">
           <div class="game-name">Little Moments for Big Laughs</div>
-          <div class="game-tagline">Tap to get an easy, quick, silly moment to share with your kids just for the sake of fun!</div>
-        </a>   
-        
+          <div class="game-tagline">Tap to get an easy, quick, silly moment to share with your kids just for the sake of fun</div>
+        </a>
+
         <!-- 2. Would You Rather -->
         <a class="game-card" href="https://miawizz.github.io/WYR/">
           <img src="/php-app-hub/icons/would-you-rather.png" alt="Would You Rather logo">
           <div class="game-name">Would You Rather</div>
-          <div class="game-tagline">Silly "either/or" questions to build connection through conversation.</div>
+          <div class="game-tagline">Silly either or questions to build connection through conversation</div>
         </a>
-    
 
         <!-- 3. Plot Twist -->
         <a class="game-card" href="https://miawizz.github.io/plot-twist/">
           <img src="/php-app-hub/icons/plot-twist.png" alt="Plot Twist story game logo">
           <div class="game-name">Plot Twist</div>
-          <div class="game-tagline">Create a family story together with title prompts, unexpected twists, and an easy way to record and save the magic.</div>
+          <div class="game-tagline">Create a family story together with title prompts, twists, and an easy way to record and save the magic</div>
         </a>
 
         <!-- 4. Who Can Sound Like -->
         <a class="game-card" href="https://miawizz.github.io/who-can-sound-like/">
           <img src="/php-app-hub/icons/who-can-sound-like.png" alt="Who Can Sound Like logo">
           <div class="game-name">Who Can Sound Like</div>
-          <div class="game-tagline">Fun, random noise prompts that redirect loud kiddo energy into lighthearted play.</div>
+          <div class="game-tagline">Fun, random noise prompts that redirect loud kiddo energy into lighthearted play</div>
         </a>
 
         <!-- 5. You Are -->
         <a class="game-card" href="https://miawizz.github.io/you-are/">
           <img src="/php-app-hub/icons/you-are.png" alt="You Are prompts logo">
           <div class="game-name">You Are</div>
-          <div class="game-tagline">Creative physical acting prompts that turn wild energy into joyful, organized chaos.</div>
+          <div class="game-tagline">Creative physical acting prompts that turn wild energy into joyful, organized chaos</div>
         </a>
 
-                <!-- 6. Make This Face -->
+        <!-- 6. Make This Face -->
         <a class="game-card" href="https://miawizz.github.io/make-this-face/">
           <img src="/php-app-hub/icons/make-this-face.png" alt="Make This Face logo">
           <div class="game-name">Make This Face</div>
-          <div class="game-tagline">Facial expression challenges (great for when play needs to be quiet-ish!)</div>
+          <div class="game-tagline">Facial expression challenges, great for when play needs to be quiet ish</div>
         </a>
 
         <!-- 7. Act Out That Sound -->
         <a class="game-card" href="https://miawizz.github.io/act-out-that-sound/">
           <img src="/php-app-hub/icons/act-out-that-sound.png" alt="Act Out That Sound logo">
           <div class="game-name">Act Out That Sound</div>
-          <div class="game-tagline">Surprise sound effects to lip-sync and act out for a little dose of silly fun.</div>
+          <div class="game-tagline">Surprise sound effects to lip sync and act out for a little dose of silly fun</div>
         </a>
 
-                <!-- 8. Are We There Yet (car games) -->
+        <!-- 8. Are We There Yet (car games) -->
         <a class="game-card" href="https://miawizz.github.io/awty-car-games/">
           <img src="/php-app-hub/icons/are-we-there-yet.png" alt="Are We There Yet car games logo">
           <div class="game-name">Are We There Yet</div>
-          <div class="game-tagline">20+ car games for connection.</div>
+          <div class="game-tagline">Twenty plus car games for connection</div>
         </a>
 
       </div>
 
-<section class="printableSection">
-  <h2 class="printTitle">Printable Card Decks</h2>
+      <!-- Printable Card Decks section (collapsible) -->
+      <details class="printableSection">
+        <summary>
+          <span>Printable Card Decks</span>
+          <span class="printCaret">▾</span>
+        </summary>
 
-  <p class="printDesc">
-    Over <strong>340 cards</strong> are included in this printable bundle!  
-    These cards are pulled straight from the Playful Heart apps.
-  </p>
+        <div class="printContent">
+          <p class="printDesc">
+            Over <strong>340 cards</strong> are included in this printable bundle.  
+            These cards are pulled straight from the Playful Heart apps.
+          </p>
 
-  <p class="printDesc">
-    Each deck includes just a handful of favorites (most have <strong>53 cards</strong>) so you’re not printing hundreds of pages.  
-    The full prompt collections live inside the apps and continue to grow with new ideas over time.
-  </p>
+          <p class="printDesc">
+            Each deck includes just a handful of favorites (most have <strong>53 cards</strong>) so you are not printing hundreds of pages.  
+            The full prompt collections live inside the apps and continue to grow with new ideas over time.
+          </p>
 
-  <p class="printDesc">
-    <strong>Reminder:</strong> Little Moments for Big Laughs is a parent-only collection of simple, silly connection ideas.  
-    The other decks can be printed for kids to choose from and start the fun on their own.
-  </p>
+          <p class="printDesc">
+            <strong>Reminder:</strong> Little Moments for Big Laughs is a parent only collection of simple, silly connection ideas.  
+            The other decks can be printed for kids to choose from and start the fun on their own.
+          </p>
 
-  <p class="printDesc">
-    <strong>TIP:</strong> To save paper and ink, print two-to-a-page or only the specific decks you'll reach for most often.
-  </p>
+          <p class="printDesc">
+            <strong>Tip:</strong> To save paper and ink, print two to a page or only the specific decks you reach for most often.
+          </p>
 
-  <h3 class="printIdeasTitle">Ideas for using your cards</h3>
-  <ul class="printIdeas">
-    <li>Laminate, hole-punch, and pop them on a key ring for grab-and-go fun</li>
-    <li>Fold them into a big jar and let kids pull a prompt whenever they want</li>
-    <li>Keep a mini stack in the glove compartment for easy car play</li>
-    <li>Store decks in a kitchen drawer for meal times</li>
-    <li>Clip a few to your bag for out-and-about fun (perfect for waiting!)</li>
-    <li>Keep a stack on your nightstand for bedtime giggles</li>
-    <li>Pick one card each morning as a “Daily Play Challenge”</li>
-    <li>Use them as a screen-free reset when energy gets wiggly</li>
-    <li>Let kids shuffle a deck and “deal out” a card to start the fun</li>
-  </ul>
+          <h3 class="printIdeasTitle">Ideas for using your cards</h3>
+          <ul class="printIdeas">
+            <li>Laminate, hole punch, and pop them on a key ring for grab and go fun</li>
+            <li>Fold them into a big jar and let kids pull a prompt whenever they want</li>
+            <li>Keep a mini stack in the glove compartment for easy car play</li>
+            <li>Store decks in a kitchen drawer for meal times</li>
+            <li>Clip a few to your bag for out and about fun, perfect for waiting</li>
+            <li>Keep a stack on your nightstand for bedtime giggles</li>
+            <li>Pick one card each morning as a Daily Play Challenge</li>
+            <li>Use them as a screen free reset when energy gets wiggly</li>
+            <li>Let kids shuffle a deck and deal out a card to start the fun</li>
+          </ul>
 
-  <a 
-    href="card-deck-bundle.pdf" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    class="printBtn"
-  >
-    Open Printable Card Deck Bundle (PDF)
-  </a>
-</section>
+          <a 
+            href="card-deck-bundle.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="printBtn"
+          >
+            Open Printable Card Deck Bundle (PDF)
+          </a>
+        </div>
+      </details>
 
-      
     </main>
 
     <p class="footer-note">
