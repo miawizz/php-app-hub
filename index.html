@@ -433,6 +433,49 @@
       line-height: 1.5;
     }
 
+/* Collapsible Ideas Button */
+.printIdeasDetails {
+  margin-top: 28px; /* More space above */
+  margin-bottom: 20px; /* More space before the PDF button */
+}
+
+.printIdeasButton {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #e4f3f7; /* soft light teal */
+  color: #14323c;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.printIdeasButton::-webkit-details-marker {
+  display: none;
+}
+
+.printIdeasDetails[open] .printCaret {
+  transform: rotate(180deg);
+}
+
+.printCaret {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+/* More spacing inside when open */
+.printIdeas {
+  padding-left: 20px;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+    
     .printBtn {
       display: inline-block;
       background: #699eb0;
@@ -444,21 +487,7 @@
       text-align: center;
     }
 
-    .printIdeasDetails {
-  margin-top: 20px;
-}
 
-.printIdeasDetails summary {
-  list-style: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.printIdeasDetails summary::-webkit-details-marker {
-  display: none;
-}
 
     
     .printBtn:hover {
@@ -646,9 +675,9 @@
             <strong>Tip:</strong> To save paper and ink, print two-to-a-page or just the specific decks you'll reach for most often.
           </p>
 
- <details class="printIdeasDetails">
-  <summary>
-    <span class="printIdeasTitle">Ideas for using your cards</span>
+<details class="printIdeasDetails">
+  <summary class="printIdeasButton">
+    Ideas for using your cards
     <span class="printCaret">▾</span>
   </summary>
 
@@ -664,6 +693,7 @@
     <li>Let kids shuffle a deck and deal out a card to start the fun</li>
   </ul>
 </details>
+
 
 
           <a 
