@@ -444,6 +444,23 @@
       text-align: center;
     }
 
+    .printIdeasDetails {
+  margin-top: 20px;
+}
+
+.printIdeasDetails summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.printIdeasDetails summary::-webkit-details-marker {
+  display: none;
+}
+
+    
     .printBtn:hover {
       background: #5b8b9a;
     }
@@ -629,18 +646,25 @@
             <strong>Tip:</strong> To save paper and ink, print two-to-a-page or just the specific decks you'll reach for most often.
           </p>
 
-          <h3 class="printIdeasTitle">Ideas for using your cards</h3>
-          <ul class="printIdeas">
-            <li>Laminate, hole punch, and pop them on a key ring for grab and go fun</li>
-            <li>Fold them into a big jar and let kids pull a prompt whenever they want</li>
-            <li>Keep a mini stack in the glove compartment for easy car play</li>
-            <li>Store decks in a kitchen drawer for meal times</li>
-            <li>Clip a few to your bag for out and about fun (perfect for waiting!)</li>
-            <li>Keep a stack on your nightstand for bedtime giggles</li>
-            <li>Pick one card each morning as a Daily Play Challenge</li>
-            <li>Use them as a screen free reset when energy gets wild</li>
-            <li>Let kids shuffle a deck and deal out a card to start the fun!</li>
-          </ul>
+ <details class="printIdeasDetails">
+  <summary>
+    <span class="printIdeasTitle">Ideas for using your cards</span>
+    <span class="printCaret">▾</span>
+  </summary>
+
+  <ul class="printIdeas">
+    <li>Laminate, hole punch, and pop them on a key ring for grab and go fun</li>
+    <li>Fold them into a big jar and let kids pull a prompt whenever they want</li>
+    <li>Keep a mini stack in the glove compartment for easy car play</li>
+    <li>Store decks in a kitchen drawer for meal times</li>
+    <li>Clip a few to your bag for out and about fun, perfect for waiting</li>
+    <li>Keep a stack on your nightstand for bedtime giggles</li>
+    <li>Pick one card each morning as a Daily Play Challenge</li>
+    <li>Use them as a screen free reset when energy gets wiggly</li>
+    <li>Let kids shuffle a deck and deal out a card to start the fun</li>
+  </ul>
+</details>
+
 
           <a 
             href="card-deck-bundle.pdf" 
