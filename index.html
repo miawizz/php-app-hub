@@ -744,6 +744,17 @@ margin: 2px 0 18px;
   <!-- Courtesy logic -->
   <script>
     (function () {
+      
+const isCircle = new URLSearchParams(window.location.search).get("circle") === "1";
+if (isCircle) {
+  const overlay = document.getElementById("courtesyOverlay");
+  const installBar = document.getElementById("install-help");
+
+  if (overlay) overlay.remove();
+  if (installBar) installBar.remove();
+
+  return;
+}
       const COURTESY_KEY = "php_hub_courtesy_v1";
       const overlay = document.getElementById("courtesyOverlay");
       const ack = document.getElementById("courtesyAck");
@@ -785,6 +796,10 @@ margin: 2px 0 18px;
   <!-- Install help logic -->
   <script>
     (function () {
+const isCircle = new URLSearchParams(window.location.search).get("circle") === "1";
+if (isCircle) {
+  return;
+}
       const root = document.getElementById("install-help");
       if (!root) return;
 
