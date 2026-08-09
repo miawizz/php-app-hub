@@ -1,6 +1,6 @@
 // service-worker.js
 
-const CACHE_NAME = "php-app-hub-v2";
+const CACHE_NAME = "silly-moments-v1";
 
 const ASSETS = [
   // Hub shell
@@ -19,6 +19,7 @@ const ASSETS = [
   "/php-app-hub/icons/act-out-that-sound.png",
   "/php-app-hub/icons/make-this-face.png",
   "/php-app-hub/icons/little-moments-for-big-laughs.png",
+  "/php-app-hub/icons/what-should-we-doodle.png",
 
   // Main entry points for each app (these will get deeper assets cached on first use)
   "/awty-car-games/",
@@ -28,7 +29,8 @@ const ASSETS = [
   "/you-are/",
   "/act-out-that-sound/",
   "/make-this-face/",
-  "/LMFBL/"
+  "/LMFBL/",
+  "/What-Should-We-Doodle/"
 ];
 
 self.addEventListener("install", event => {
