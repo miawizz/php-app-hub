@@ -840,7 +840,7 @@
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
-        navigator.serviceWorker.register("/service-worker.js").catch(function (error) {
+        navigator.serviceWorker.register("/php-app-hub/service-worker.js").catch(function (error) {
           console.log("Service worker registration failed", error);
         });
       });
