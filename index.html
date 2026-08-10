@@ -946,7 +946,8 @@ if (isCircle) {
       const gameUrl = card.getAttribute("href");
       if (!gameUrl) return;
 
-      frame.src = gameUrl;
+     const separator = gameUrl.includes("?") ? "&" : "?";
+frame.src = gameUrl + separator + "circle=1";
 
       grid.style.display = "none";
 
