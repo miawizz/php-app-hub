@@ -948,7 +948,11 @@ if (isCircle) {
 
      const separator = gameUrl.includes("?") ? "&" : "?";
 frame.src = gameUrl + separator + "circle=1";
-
+frame.onload = function () {
+  try {
+    frame.contentWindow.scrollTo(0, 0);
+  } catch (e) {}
+};
       grid.style.display = "none";
 
       if (printableSection) {
@@ -957,10 +961,10 @@ frame.src = gameUrl + separator + "circle=1";
 
       viewer.classList.add("active");
 
-      viewer.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+viewer.scrollIntoView({
+  behavior: "auto",
+  block: "start"
+});
     });
   });
 
