@@ -511,6 +511,39 @@ margin: 2px 0 18px;
     .printBtn:hover {
       background: #5b8b9a;
     }
+
+    /* Circle in-app game viewer */
+
+.circle-game-viewer {
+  display: none;
+  width: 100%;
+}
+
+.circle-game-viewer.active {
+  display: block;
+}
+
+.circle-game-back {
+  display: inline-block;
+  margin-bottom: 14px;
+  background: #127490;
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.circle-game-frame {
+  width: 100%;
+  height: 1400px;
+  border: 0;
+  border-radius: 16px;
+  background: #fff9f3;
+}
   </style>
 </head>
 <body>
@@ -678,6 +711,20 @@ margin: 2px 0 18px;
   </a>
 
 </div>
+
+   <div id="circleGameViewer" class="circle-game-viewer">
+  <button id="circleGameBack" class="circle-game-back" type="button">
+    ← Back to All Apps
+  </button>
+
+  <iframe
+    id="circleGameFrame"
+    class="circle-game-frame"
+    src="about:blank"
+    title="Silly Moments App">
+  </iframe>
+</div>
+   
       <!-- Printable Card Decks section (collapsible) -->
       <details class="printableSection">
         <summary>
@@ -875,6 +922,65 @@ if (isCircle) {
     })();
   </script>
 
+<script>
+(function () {
+  const isCircle =
+    new URLSearchParams(window.location.search).get("circle") === "1";
+
+  if (!isCircle) return;
+
+  const grid = document.querySelector(".games-grid");
+  const viewer = document.getElementById("circleGameViewer");
+  const frame = document.getElementById("circleGameFrame");
+  const backButton = document.getElementById("circleGameBack");
+  const printableSection = document.querySelector(".printableSection");
+
+  if (!grid || !viewer || !frame || !backButton) return;
+
+  const gameCards = document.querySelectorAll(".game-card");
+
+  gameCards.forEach(function (card) {
+    card.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const gameUrl = card.getAttribute("href");
+      if (!gameUrl) return;
+
+      frame.src = gameUrl;
+
+      grid.style.display = "none";
+
+      if (printableSection) {
+        printableSection.style.display = "none";
+      }
+
+      viewer.classList.add("active");
+
+      viewer.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  });
+
+  backButton.addEventListener("click", function () {
+    frame.src = "about:blank";
+
+    viewer.classList.remove("active");
+    grid.style.display = "grid";
+
+    if (printableSection) {
+      printableSection.style.display = "";
+    }
+
+    grid.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+})();
+</script>
+  
   <!-- Service worker registration -->
   <script>
     if ("serviceWorker" in navigator) {
