@@ -1,6 +1,6 @@
 // service-worker.js
 
-const CACHE_NAME = "silly-moments-v10";
+const CACHE_NAME = "silly-moments-v11";
 
 const ASSETS = [
   // Hub shell
@@ -10,7 +10,7 @@ const ASSETS = [
   "/php-app-hub/icons/icon-192.png",
   "/php-app-hub/icons/icon-512.png",
 
-  // Hub tiles
+  // Existing hub tiles
   "/php-app-hub/icons/are-we-there-yet.png",
   "/php-app-hub/icons/plot-twist.png",
   "/php-app-hub/icons/who-can-sound-like.png",
@@ -21,7 +21,14 @@ const ASSETS = [
   "/php-app-hub/icons/little-moments-for-big-laughs.png",
   "/php-app-hub/icons/what-should-we-doodle.png",
 
-  // Main entry points for each app (these will get deeper assets cached on first use)
+  // New theme-pack tiles
+  "/php-app-hub/dinosaur-icon.png",
+  "/php-app-hub/things-that-go-icon.png",
+  "/php-app-hub/magic-make-believe-icon.png",
+  "/php-app-hub/space-icon.png",
+  "/php-app-hub/gross-stuff-icon.png",
+
+  // Existing app entry points
   "/awty-car-games/",
   "/plot-twist/",
   "/who-can-sound-like/",
@@ -30,7 +37,14 @@ const ASSETS = [
   "/act-out-that-sound/",
   "/make-this-face/",
   "/LMFBL/",
-  "/What-Should-We-Doodle/"
+  "/What-Should-We-Doodle/",
+
+  // New theme-pack entry points
+  "/dinosaur-pack/",
+  "/things-that-go-pack/",
+  "/magic-make-believe-pack/",
+  "/space-pack/",
+  "/gross-stuff-pack/"
 ];
 
 self.addEventListener("install", event => {
@@ -41,6 +55,7 @@ self.addEventListener("install", event => {
       });
     })
   );
+
   self.skipWaiting();
 });
 
@@ -56,18 +71,52 @@ self.addEventListener("activate", event => {
       );
     })
   );
+
   self.clients.claim();
 });
 
-// Simple cache first strategy with network fallback
 self.addEventListener("fetch", event => {
   const request = event.request;
 
-  // Only handle same origin GET requests
-  if (request.method !== "GET" || new URL(request.url).origin !== self.location.origin) {
+  // Only handle same-origin GET requests
+  if (
+    request.method !== "GET" ||
+    new URL(request.url).origin !== self.location.origin
+  ) {
     return;
   }
 
+  // Pages/navigation:
+  // Try the network first so new app updates appear when online.
+  // Fall back to the cached version when offline.
+  if (request.mode === "navigate") {
+    event.respondWith(
+      fetch(request)
+        .then(networkResponse => {
+          const clone = networkResponse.clone();
+
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(request, clone);
+          });
+
+          return networkResponse;
+        })
+        .catch(() => {
+          return caches.match(request).then(cachedResponse => {
+            if (cachedResponse) {
+              return cachedResponse;
+            }
+
+            return caches.match("/php-app-hub/index.html");
+          });
+        })
+    );
+
+    return;
+  }
+
+  // Images and other assets:
+  // Use cached copy first, then fetch and cache if needed.
   event.respondWith(
     caches.match(request).then(cachedResponse => {
       if (cachedResponse) {
@@ -77,15 +126,22 @@ self.addEventListener("fetch", event => {
       return fetch(request)
         .then(networkResponse => {
           const clone = networkResponse.clone();
+
           caches.open(CACHE_NAME).then(cache => {
             cache.put(request, clone);
           });
+
           return networkResponse;
         })
         .catch(() => {
-          return new Response("You appear to be offline. Try again when you are back online.", {
-            headers: { "Content-Type": "text/plain" }
-          });
+          return new Response(
+            "You appear to be offline. Try again when you are back online.",
+            {
+              headers: {
+                "Content-Type": "text/plain"
+              }
+            }
+          );
         });
     })
   );
