@@ -176,6 +176,29 @@ margin: 2px 0 18px;
       min-height: 2.4em;
     }
 
+
+    .theme-section {
+      margin-top: 34px;
+    }
+
+    .theme-section-header {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .theme-section-title {
+      font-family: "Baloo 2", system-ui, sans-serif;
+      font-size: 1.35rem;
+      color: #127490;
+      margin-bottom: 4px;
+    }
+
+    .theme-section-text {
+      font-size: 0.9rem;
+      color: #4c6670;
+      line-height: 1.45;
+    }
+
     .footer-note {
       font-size: 0.68rem;
       text-align: center;
@@ -712,6 +735,49 @@ margin: 2px 0 18px;
 
 </div>
 
+
+  <section class="theme-section" aria-labelledby="themeSectionTitle">
+    <div class="theme-section-header">
+      <h2 class="theme-section-title" id="themeSectionTitle">Explore by Theme</h2>
+      <p class="theme-section-text">More silly prompts, all wrapped up in kid-favorite themes.</p>
+    </div>
+
+    <div class="games-grid theme-games-grid">
+
+      <a class="game-card" href="https://miawizz.github.io/dinosaur-pack/">
+        <img src="/php-app-hub/icons/dinosaur-pack.png" alt="Dinosaurs theme pack">
+        <div class="game-name">Dinosaurs</div>
+        <div class="game-tagline">Dino-themed versions of your favorite Silly Moments games</div>
+      </a>
+
+      <a class="game-card" href="https://miawizz.github.io/things-that-go-pack/">
+        <img src="/php-app-hub/icons/things-that-go-pack.png" alt="Things That Go theme pack">
+        <div class="game-name">Things That Go</div>
+        <div class="game-tagline">Cars, trucks, planes, boats, trains, and more silly ways to play</div>
+      </a>
+
+      <a class="game-card" href="https://miawizz.github.io/magic-make-believe-pack/">
+        <img src="/php-app-hub/icons/magic-make-believe-pack.png" alt="Magic and Make-Believe theme pack">
+        <div class="game-name">Magic &amp; Make-Believe</div>
+        <div class="game-tagline">Magic, royalty, fairy tales, dragons, unicorns, and imaginative fun</div>
+      </a>
+
+      <a class="game-card" href="https://miawizz.github.io/space-pack/">
+        <img src="/php-app-hub/icons/space-pack.png" alt="Space theme pack">
+        <div class="game-name">Space</div>
+        <div class="game-tagline">Astronauts, aliens, planets, rockets, stars, and outer-space silliness</div>
+      </a>
+
+      <a class="game-card" href="https://miawizz.github.io/gross-stuff-pack/">
+        <img src="/php-app-hub/icons/gross-stuff-pack.png" alt="Gross Stuff theme pack">
+        <div class="game-name">Gross Stuff</div>
+        <div class="game-tagline">Farts, burps, boogers, slime, stinky stuff, and kid-approved gross fun</div>
+      </a>
+
+    </div>
+  </section>
+
+
    <div id="circleGameViewer" class="circle-game-viewer">
   <button id="circleGameBack" class="circle-game-back" type="button">
     ← Back to All Apps
@@ -929,13 +995,13 @@ if (isCircle) {
 
   if (!isCircle) return;
 
-  const grid = document.querySelector(".games-grid");
+  const grids = document.querySelectorAll(".games-grid");
   const viewer = document.getElementById("circleGameViewer");
   const frame = document.getElementById("circleGameFrame");
   const backButton = document.getElementById("circleGameBack");
   const printableSection = document.querySelector(".printableSection");
 
-  if (!grid || !viewer || !frame || !backButton) return;
+  if (!grids.length || !viewer || !frame || !backButton) return;
 
   const gameCards = document.querySelectorAll(".game-card");
 
@@ -953,7 +1019,9 @@ frame.onload = function () {
     frame.contentWindow.scrollTo(0, 0);
   } catch (e) {}
 };
-      grid.style.display = "none";
+      grids.forEach(function (grid) {
+        grid.style.display = "none";
+      });
 
       if (printableSection) {
         printableSection.style.display = "none";
@@ -972,16 +1040,20 @@ viewer.scrollIntoView({
     frame.src = "about:blank";
 
     viewer.classList.remove("active");
-    grid.style.display = "grid";
+    grids.forEach(function (grid) {
+      grid.style.display = "grid";
+    });
 
     if (printableSection) {
       printableSection.style.display = "";
     }
 
-    grid.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    if (grids[0]) {
+      grids[0].scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
   });
 })();
 </script>
