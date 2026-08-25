@@ -45,7 +45,8 @@ const ASSETS = [
   "/things-that-go-pack/",
   "/magic-make-believe-pack/",
   "/space-pack/",
-  "/gross-stuff-pack/"
+  "/gross-stuff-pack/",
+  "/jungle-pack/"
 ];
 
 self.addEventListener("install", event => {
