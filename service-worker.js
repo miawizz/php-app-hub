@@ -27,6 +27,7 @@ const ASSETS = [
   "/php-app-hub/magic-make-believe-icon.png",
   "/php-app-hub/space-icon.png",
   "/php-app-hub/gross-stuff-icon.png",
+  "/php-app-hub/jungle-icon.png",
 
   // Existing app entry points
   "/awty-car-games/",
