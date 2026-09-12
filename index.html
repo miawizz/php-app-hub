@@ -1040,8 +1040,7 @@ if (isCircle) {
   const viewer = document.getElementById("circleGameViewer");
   const frame = document.getElementById("circleGameFrame");
   const backButton = document.getElementById("circleGameBack");
-  const printableSection = document.querySelector(".printableSection");
-
+  const printableSections = document.querySelectorAll(".printableSection");
   if (!grids.length || !viewer || !frame || !backButton) return;
 
   const gameCards = document.querySelectorAll(".game-card");
@@ -1064,9 +1063,9 @@ frame.onload = function () {
         grid.style.display = "none";
       });
 
-      if (printableSection) {
-        printableSection.style.display = "none";
-      }
+      printableSections.forEach(function (section) {
+  section.style.display = "none";
+});
 
       viewer.classList.add("active");
 
@@ -1085,9 +1084,9 @@ viewer.scrollIntoView({
       grid.style.display = "grid";
     });
 
-    if (printableSection) {
-      printableSection.style.display = "";
-    }
+    printableSections.forEach(function (section) {
+  section.style.display = "";
+});
 
     if (grids[0]) {
       grids[0].scrollIntoView({
@@ -1103,9 +1102,16 @@ viewer.scrollIntoView({
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
-        navigator.serviceWorker.register("/php-app-hub/service-worker.js").catch(function (error) {
-          console.log("Service worker registration failed", error);
-        });
+navigator.serviceWorker
+  .register("/php-app-hub/service-worker.js", {
+    updateViaCache: "none"
+  })
+  .then(function(registration) {
+    registration.update();
+  })
+  .catch(function(error) {
+    console.log("Service worker registration failed", error);
+  });
       });
     }
   </script>
