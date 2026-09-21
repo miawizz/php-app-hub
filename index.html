@@ -534,11 +534,17 @@ margin: 2px 0 18px;
     .printBtn:hover {
       background: #5b8b9a;
     }
-    .printDownloadButtons {
+.printDownloadButtons {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+.printDownloadButtons .printBtn {
+  display: block;
+  width: 100%;
+  margin: 0;
 }
 
     /* Circle in-app game viewer */
@@ -830,24 +836,25 @@ margin: 2px 0 18px;
   Choose the colorful original or the ink-friendly black &amp; white version (perfect for coloring in as you play!).
 </p>
 
-<a
-  href="a-year-of-silly-moments.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="printBtn"
->
-  Open Full-Color Version (PDF)
-</a>
+<div class="printDownloadButtons">
+  <a
+    href="a-year-of-silly-moments.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="printBtn"
+  >
+    Open Full-Color Version (PDF)
+  </a>
 
-<a
-  href="a-year-of-silly-moments-bw.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="printBtn"
-  style="margin-left: 8px;"
->
-  Open Printer-Friendly Version (PDF)
-</a>
+  <a
+    href="a-year-of-silly-moments-bw.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="printBtn"
+  >
+    Open Printer-Friendly Version (PDF)
+  </a>
+</div>
 
   </div>
 </details>
