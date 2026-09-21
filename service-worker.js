@@ -1,6 +1,6 @@
 // service-worker.js
 
-const CACHE_NAME = "silly-moments-v13";
+const CACHE_NAME = "silly-moments-v14";
 
 const ASSETS = [
   // Hub shell
@@ -10,6 +10,7 @@ const ASSETS = [
   "/php-app-hub/icons/icon-192.png",
   "/php-app-hub/icons/icon-512.png",
   "/php-app-hub/a-year-of-silly-moments.pdf",
+  "/php-app-hub/a-year-of-silly-moments-bw.pdf",
 
   // Existing hub tiles
   "/php-app-hub/icons/are-we-there-yet.png",
