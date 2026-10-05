@@ -1,6 +1,6 @@
 // service-worker.js
 
-const CACHE_NAME = "silly-moments-v28";
+const CACHE_NAME = "silly-moments-v29";
 
 const ASSETS = [
   // Hub shell
