@@ -1,6 +1,6 @@
 // service-worker.js
 
-const CACHE_NAME = "silly-moments-v16";
+const CACHE_NAME = "silly-moments-v17";
 
 const ASSETS = [
   // Hub shell
@@ -17,7 +17,7 @@ const ASSETS = [
   "/php-app-hub/icons/plot-twist.png",
   "/php-app-hub/icons/who-can-sound-like.png",
   "/php-app-hub/icons/would-you-rather.png",
-  "/php-app-hub/icons/you-are.png",
+  "/php-app-hub/icons/act-this-out.png",
   "/php-app-hub/icons/act-out-that-sound.png",
   "/php-app-hub/icons/make-this-face.png",
   "/php-app-hub/icons/little-moments-for-big-laughs.png",
