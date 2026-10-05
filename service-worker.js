@@ -20,7 +20,7 @@ const ASSETS = [
   "/php-app-hub/icons/act-this-out.png",
   "/php-app-hub/icons/act-out-that-sound.png",
   "/php-app-hub/icons/make-this-face.png",
-  "/php-app-hub/icons/little-moments-for-big-laughs.png",
+"/php-app-hub/icons/silly-moment-challenge.png",
   "/php-app-hub/icons/what-should-we-doodle.png",
 
   // New theme-pack tiles
